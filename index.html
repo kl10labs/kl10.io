@@ -22,19 +22,47 @@
         p {
             line-height: 145%;
         }
+        h1 {
+            font-size: 72px;
+        }
+        span {
+            text-decoration: underline;
+            text-decoration-style:dotted;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-                Welcome to <b>KL10</b>
+         Welcome to <b>KL10</b>
         </br>
         </br>
         </br>
-                <h1>Our design is <span style="text-decoration: underline; text-decoration-style:dotted;">human—centric.</span></h1>
-        </br>
-        </br>
+        <h1><div id="sequence">Tools to <span>run your business</span></br>- even when it's not business as usual.</div></h1>
         <p style="color: white; opacity: 0.5;">We’re a design and development agency who specialise in simple,</br>useful and beautiful solutions.</p>
     
     </div>
+
+    <script>
+        var example = [
+            'Our design is </br><span>human-centered.</span>', 
+            'Tools to <span>run your business</span></br>- even when it\'s not business as usual.', 
+            'Bring <span>ideas</span> to life.' 
+            ];
+
+        textSequence(0);
+        function textSequence(i) {
+
+            if (example.length > i) {
+                setTimeout(function() {
+                    document.getElementById("sequence").innerHTML = example[i];
+                    textSequence(++i);
+                }, 16000);
+
+            } else if (example.length == i) { 
+                textSequence(0);
+            }
+
+        }
+    </script>
 </body>
 </html>
